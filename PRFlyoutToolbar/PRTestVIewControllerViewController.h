@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PRTestVIewControllerViewController : UIViewController
+@property(nonatomic) UIToolbar *toolBar;
+
+- (void)didChangeStatusBarFrame;
 
 @end

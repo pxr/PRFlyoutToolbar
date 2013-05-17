@@ -11,6 +11,7 @@
 
 @implementation PRFlyoutToolbar
 
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -32,10 +33,13 @@
   [super beginTrackingWithTouch:touch withEvent:event];
   
   self.layer.backgroundColor = [UIColor greenColor].CGColor;
-  CGRect newFrame = self.frame;
-  newFrame.size.width = newFrame.size.width*2;
-      
-  self.frame = newFrame;
+  CGRect newFrame = CGRectInset(self.layer.bounds, 1, 1);
+  
+  CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"bounds"];
+
+  self.layer.bounds = newFrame;
+  [self.layer addAnimation:animation forKey:@"bounds"];
+  return YES;
 }
 
 /*
