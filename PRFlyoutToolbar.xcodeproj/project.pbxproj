@@ -25,6 +25,7 @@
 		DAD7245D1744727300D1FF87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD7243E1744727300D1FF87 /* Foundation.framework */; };
 		DAD724651744727300D1FF87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD724631744727300D1FF87 /* InfoPlist.strings */; };
 		DAD724681744727300D1FF87 /* PRFlyoutToolbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD724671744727300D1FF87 /* PRFlyoutToolbarTests.m */; };
+		DADEC7DA1749B261002D155D /* PRToolbarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DADEC7D91749B261002D155D /* PRToolbarControl.m */; };
 		E255821A2EC84B66BAD76959 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD087F203C541CCAF9093E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,8 @@
 		DAD724641744727300D1FF87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DAD724661744727300D1FF87 /* PRFlyoutToolbarTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRFlyoutToolbarTests.h; sourceTree = "<group>"; };
 		DAD724671744727300D1FF87 /* PRFlyoutToolbarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRFlyoutToolbarTests.m; sourceTree = "<group>"; };
+		DADEC7D81749B261002D155D /* PRToolbarControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRToolbarControl.h; sourceTree = "<group>"; };
+		DADEC7D91749B261002D155D /* PRToolbarControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRToolbarControl.m; sourceTree = "<group>"; };
 		DDD78FF31946412ABB209B52 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 				DA63BED617447730007C8B56 /* PRFlyoutToolbar.h */,
 				DA63BED717447730007C8B56 /* PRFlyoutToolbar.m */,
 				DAD724431744727300D1FF87 /* Supporting Files */,
+				DADEC7D81749B261002D155D /* PRToolbarControl.h */,
+				DADEC7D91749B261002D155D /* PRToolbarControl.m */,
 			);
 			path = PRFlyoutToolbar;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				DA63BED5174473C0007C8B56 /* PRTestVIewControllerViewController.m in Sources */,
 				DA63BED817447730007C8B56 /* PRFlyoutToolbar.m in Sources */,
 				DA452B8017480FA9001D7E41 /* PRHandleControl.m in Sources */,
+				DADEC7DA1749B261002D155D /* PRToolbarControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

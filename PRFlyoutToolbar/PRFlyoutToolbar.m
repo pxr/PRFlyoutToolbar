@@ -12,11 +12,13 @@
 #import "PRCategoryKit.h"
 #import "PRFlyoutToolbar.h"
 #import "PRHandleControl.h"
+#import "PRToolbarControl.h"
 
 // private
 @interface PRFlyoutToolbar() 
 @property(nonatomic) PRHandleControl *handleView;
-//@property(nonatomic) PRToolBarControl *toolbarControl;
+@property(nonatomic) PRToolbarControl *toolbarControl;
+@property(nonatomic) NSLayoutConstraint *widthConstraint;
 @end
 
 
@@ -51,31 +53,83 @@
   CALayer *layer = self.layer;
   layer.backgroundColor = [UIColor greenColor].CGColor;
   
-  [self setupConstraints];
-  [self addHandle];
   
+  [self addHandle];
+  [self addToolbar];
 }
 
-- (void)setupConstraints {
+
+- (void)addToolbar {
+  self.toolbarControl = [[PRToolbarControl alloc] init];
+  self.toolbarControl.translatesAutoresizingMaskIntoConstraints = NO;
+  self.translatesAutoresizingMaskIntoConstraints = NO;
   
-  // We want the control to size itself to be the width of the handle
-  // and the tool bar
+  // setup intrinsic size
+  NSLayoutConstraint *c1 =[NSLayoutConstraint
+                           constraintWithItem:self
+                           attribute:NSLayoutAttributeHeight
+                           relatedBy:NSLayoutRelationEqual
+                           toItem:nil
+                           attribute:NSLayoutAttributeNotAnAttribute
+                           multiplier:1.0
+                           constant:30];
   
+  self.widthConstraint =[NSLayoutConstraint
+                         constraintWithItem:self
+                         attribute:NSLayoutAttributeWidth
+                         relatedBy:NSLayoutRelationEqual
+                         toItem:nil
+                         attribute:NSLayoutAttributeNotAnAttribute
+                         multiplier:1.0
+                         constant:44];
+
+  [self setWidthConstraints:40+40*[self.items count]];
+  
+  [self addConstraint:c1];
+  [self addConstraint:self.widthConstraint];
+
 }
+
+- (void)setWidthConstraints:(CGFloat)width {
+  DDLogInfo(@"setWidthConstraints:%f", width);
+  
+  [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionLayoutSubviews
+                   animations:^{
+                     self.widthConstraint.constant = width;
+                     [self layoutIfNeeded];
+                   }
+                   completion:^(BOOL done){
+                     
+                   }];
+
+  }
 
 - (void)addHandle {
   self.handleView = [[PRHandleControl alloc] init];
   self.handleView.translatesAutoresizingMaskIntoConstraints = NO;
   
-  // setup intrinsic size  
+  [self setupHandleConstraints];
+  
+  __weak PRFlyoutToolbar *weakSelf = self;
+  
+  self.handleView.touchBlock = ^(UITouch *touch, UIEvent *event) {
+    [weakSelf toggleOpen];
+  };
+  
+  [self addSubview:self.handleView];
+  self.handleView.backgroundColor = [UIColor redColor];
+}
+
+-(void)setupHandleConstraints {
+  // setup intrinsic size
   NSLayoutConstraint *c1 =[NSLayoutConstraint
-                                     constraintWithItem:self.handleView
-                                     attribute:NSLayoutAttributeHeight
-                                     relatedBy:NSLayoutRelationEqual
-                                     toItem:nil
-                                     attribute:NSLayoutAttributeNotAnAttribute
-                                     multiplier:1.0
-                                     constant:20];
+                           constraintWithItem:self.handleView
+                           attribute:NSLayoutAttributeHeight
+                           relatedBy:NSLayoutRelationEqual
+                           toItem:nil
+                           attribute:NSLayoutAttributeNotAnAttribute
+                           multiplier:1.0
+                           constant:20];
   
   NSLayoutConstraint *c2 =[NSLayoutConstraint
                            constraintWithItem:self.handleView
@@ -85,15 +139,15 @@
                            attribute:NSLayoutAttributeNotAnAttribute
                            multiplier:1.0
                            constant:20];
-
+  
   NSLayoutConstraint *c3 =[NSLayoutConstraint
-                                     constraintWithItem:self.handleView
-                                     attribute:NSLayoutAttributeCenterY
-                                     relatedBy:NSLayoutRelationEqual
-                                     toItem:self
-                                     attribute:NSLayoutAttributeCenterY
-                                     multiplier:1.0
-                                     constant:0];
+                           constraintWithItem:self.handleView
+                           attribute:NSLayoutAttributeCenterY
+                           relatedBy:NSLayoutRelationEqual
+                           toItem:self
+                           attribute:NSLayoutAttributeCenterY
+                           multiplier:1.0
+                           constant:0];
   
   NSLayoutConstraint *c4 =[NSLayoutConstraint
                            constraintWithItem:self.handleView
@@ -103,26 +157,12 @@
                            attribute:NSLayoutAttributeRight
                            multiplier:1.0
                            constant:-5];
- 
+  
   [self addConstraint:c3];
   [self addConstraint:c4];
   [self addConstraint:c1];
   [self addConstraint:c2];
-  
-  __weak PRFlyoutToolbar *weakSelf = self;
-  
-  self.handleView.touchBlock = ^(UITouch *touch, UIEvent *event) {
-    [weakSelf toggleOpen];
-  };
-  
-  [self addSubview:self.handleView];
-  
-  //self.handleView.userInteractionEnabled = NO;
-  self.handleView.backgroundColor = [UIColor redColor];
-  DDLogInfo(@"self.handleView:%@", self.handleView);
-  DDLogInfo(@"self:%@", self);
 
-  
 }
 
 #pragma mark -
@@ -138,13 +178,15 @@
 - (void)sizeControl {
   TRACE
   if (!self.open) {
-    self.frameSize = CGSizeMake(160.0, 60.0);
+    //self.frameSize = CGSizeMake(160.0, 60.0);
+    [self setWidthConstraints:40+80*[self.items count]];
   } else {
-    //self.frameSize = CGSizeMake(200.0, 30.0);
+    [self setWidthConstraints:40];
   }
 }
 
 - (void)setItems:(NSArray *)items animated:(BOOL)animated {
+  self.items = items;
   
 }
 
