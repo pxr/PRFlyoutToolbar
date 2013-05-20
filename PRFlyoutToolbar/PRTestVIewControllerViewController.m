@@ -25,9 +25,25 @@
   UIBarButtonItem *bb2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
   UIBarButtonItem *bb3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
   
-  PRFlyoutToolbar *ft = [[PRFlyoutToolbar alloc] initWithFrame:CGRectMake(20, 400, 0, 0)];
+  PRFlyoutToolbar *ft = [[PRFlyoutToolbar alloc] init];
   ft.items = [NSArray arrayWithObjects:bb1, bb2, bb3, nil];
   [self.view addSubview:ft];
+  
+  NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings (ft);
+
+  NSArray *constraints = [NSLayoutConstraint
+                          constraintsWithVisualFormat:@"[ft]-|"
+                                              options:NSLayoutFormatAlignAllLeft
+                                              metrics:nil
+                                                views:viewsDictionary];
+  NSArray *constraints2 = [NSLayoutConstraint
+                          constraintsWithVisualFormat:@"V:[ft]-|"
+                          options:NSLayoutFormatAlignAllLeft
+                          metrics:nil
+                          views:viewsDictionary];
+
+  [self.view addConstraints:constraints];
+  [self.view addConstraints:constraints2];
 }
 
 - (CGRect)toolBarFrame {
