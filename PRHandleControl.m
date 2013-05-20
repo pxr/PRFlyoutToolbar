@@ -1,5 +1,5 @@
 //
-//  PRHandleView.m
+//  PRHandleControl.m
 //  PRFlyoutToolbar
 //
 //  Created by Paul Robinson on 2013-05-18.
@@ -7,13 +7,13 @@
 //
 
 
-#import "PRHandleView.h"
+#import "PRHandleControl.h"
 
-@interface PRHandleView()
+@interface PRHandleControl()
 @property (nonatomic) UIImageView* imageView;
 @end
 
-@implementation PRHandleView
+@implementation PRHandleControl
 
 // init will call initWithFrame with CGRectZero then HandleView will set its own size
 -(id)initWithFrame:(CGRect)frame {
@@ -27,8 +27,7 @@
 }
 
 
-- (id)initWithImage:(UIImage*)handleImage frame:(CGRect)frame
-{
+- (id)initWithImage:(UIImage*)handleImage frame:(CGRect)frame {
     TRACE
     self = [super init];
     if (self) {

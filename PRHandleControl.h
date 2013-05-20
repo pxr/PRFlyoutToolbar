@@ -1,5 +1,5 @@
 //
-//  PRHandleView.h
+//  PRHandleControl.h
 //  PRFlyoutToolbar
 //
 //  Created by Paul Robinson on 2013-05-18.
@@ -9,7 +9,7 @@
 typedef void(^TrackingTouchBlock)(UITouch* touch, UIEvent *even);
 #import <UIKit/UIKit.h>
 
-@interface PRHandleView : UIControl
+@interface PRHandleControl : UIControl
 @property (nonatomic) UIImage *image;
 @property (nonatomic) BOOL opened;
 @property (nonatomic, strong) TrackingTouchBlock touchBlock;

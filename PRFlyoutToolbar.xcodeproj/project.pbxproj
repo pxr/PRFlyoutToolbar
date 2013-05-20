@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA452B8017480FA9001D7E41 /* PRHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA452B7F17480FA9001D7E41 /* PRHandleView.m */; };
+		DA452B8017480FA9001D7E41 /* PRHandleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DA452B7F17480FA9001D7E41 /* PRHandleControl.m */; };
 		DA63BED5174473C0007C8B56 /* PRTestVIewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63BED4174473C0007C8B56 /* PRTestVIewControllerViewController.m */; };
 		DA63BED817447730007C8B56 /* PRFlyoutToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63BED717447730007C8B56 /* PRFlyoutToolbar.m */; };
 		DA63BEDC17447CCB007C8B56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA63BEDB17447CCB007C8B56 /* QuartzCore.framework */; };
@@ -40,8 +40,8 @@
 
 /* Begin PBXFileReference section */
 		CAD087F203C541CCAF9093E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA452B7E17480FA9001D7E41 /* PRHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHandleView.h; sourceTree = "<group>"; };
-		DA452B7F17480FA9001D7E41 /* PRHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHandleView.m; sourceTree = "<group>"; };
+		DA452B7E17480FA9001D7E41 /* PRHandleControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHandleControl.h; sourceTree = "<group>"; };
+		DA452B7F17480FA9001D7E41 /* PRHandleControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHandleControl.m; sourceTree = "<group>"; };
 		DA63BED3174473C0007C8B56 /* PRTestVIewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTestVIewControllerViewController.h; sourceTree = "<group>"; };
 		DA63BED4174473C0007C8B56 /* PRTestVIewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTestVIewControllerViewController.m; sourceTree = "<group>"; };
 		DA63BED617447730007C8B56 /* PRFlyoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFlyoutToolbar.h; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				DADEC7D517494F3F002D155D /* Images */,
-				DA452B7E17480FA9001D7E41 /* PRHandleView.h */,
-				DA452B7F17480FA9001D7E41 /* PRHandleView.m */,
+				DA452B7E17480FA9001D7E41 /* PRHandleControl.h */,
+				DA452B7F17480FA9001D7E41 /* PRHandleControl.m */,
 				DA63BEDB17447CCB007C8B56 /* QuartzCore.framework */,
 				DA63BED917447C72007C8B56 /* CoreFoundation.framework */,
 				DAD724421744727300D1FF87 /* PRFlyoutToolbar */,
@@ -331,7 +331,7 @@
 				DAD7244D1744727300D1FF87 /* PRAppDelegate.m in Sources */,
 				DA63BED5174473C0007C8B56 /* PRTestVIewControllerViewController.m in Sources */,
 				DA63BED817447730007C8B56 /* PRFlyoutToolbar.m in Sources */,
-				DA452B8017480FA9001D7E41 /* PRHandleView.m in Sources */,
+				DA452B8017480FA9001D7E41 /* PRHandleControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

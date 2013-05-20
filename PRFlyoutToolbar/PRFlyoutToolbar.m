@@ -11,11 +11,12 @@
 
 #import "PRCategoryKit.h"
 #import "PRFlyoutToolbar.h"
-#import "PRHandleView.h"
+#import "PRHandleControl.h"
 
 // private
 @interface PRFlyoutToolbar() 
-@property(nonatomic) PRHandleView *handleView;
+@property(nonatomic) PRHandleControl *handleView;
+//@property(nonatomic) PRToolBarControl *toolbarControl;
 @end
 
 
@@ -50,12 +51,20 @@
   CALayer *layer = self.layer;
   layer.backgroundColor = [UIColor greenColor].CGColor;
   
+  [self setupConstraints];
   [self addHandle];
   
 }
 
+- (void)setupConstraints {
+  
+  // We want the control to size itself to be the width of the handle
+  // and the tool bar
+  
+}
+
 - (void)addHandle {
-  self.handleView = [[PRHandleView alloc] init];
+  self.handleView = [[PRHandleControl alloc] init];
   self.handleView.translatesAutoresizingMaskIntoConstraints = NO;
   
   // setup intrinsic size  
