@@ -13,6 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [DDLog addLogger:[DDTTYLogger sharedInstance]];
+  
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
 
@@ -24,7 +26,7 @@
 }
 
 - (void)application:(UIApplication *)application willChangeStatusBarFrame:(CGRect)newStatusBarFrame {
-  [(PRTestVIewControllerViewController*)self.window.rootViewController didChangeStatusBarFrame];
+  TRACE
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

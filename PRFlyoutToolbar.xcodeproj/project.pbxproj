@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA452B8017480FA9001D7E41 /* PRHandleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA452B7F17480FA9001D7E41 /* PRHandleView.m */; };
 		DA63BED5174473C0007C8B56 /* PRTestVIewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63BED4174473C0007C8B56 /* PRTestVIewControllerViewController.m */; };
 		DA63BED817447730007C8B56 /* PRFlyoutToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DA63BED717447730007C8B56 /* PRFlyoutToolbar.m */; };
 		DA63BEDC17447CCB007C8B56 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA63BEDB17447CCB007C8B56 /* QuartzCore.framework */; };
@@ -24,6 +25,7 @@
 		DAD7245D1744727300D1FF87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD7243E1744727300D1FF87 /* Foundation.framework */; };
 		DAD724651744727300D1FF87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAD724631744727300D1FF87 /* InfoPlist.strings */; };
 		DAD724681744727300D1FF87 /* PRFlyoutToolbarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAD724671744727300D1FF87 /* PRFlyoutToolbarTests.m */; };
+		E255821A2EC84B66BAD76959 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD087F203C541CCAF9093E0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CAD087F203C541CCAF9093E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA452B7E17480FA9001D7E41 /* PRHandleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRHandleView.h; sourceTree = "<group>"; };
+		DA452B7F17480FA9001D7E41 /* PRHandleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRHandleView.m; sourceTree = "<group>"; };
 		DA63BED3174473C0007C8B56 /* PRTestVIewControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTestVIewControllerViewController.h; sourceTree = "<group>"; };
 		DA63BED4174473C0007C8B56 /* PRTestVIewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTestVIewControllerViewController.m; sourceTree = "<group>"; };
 		DA63BED617447730007C8B56 /* PRFlyoutToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRFlyoutToolbar.h; sourceTree = "<group>"; };
@@ -62,6 +67,7 @@
 		DAD724641744727300D1FF87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DAD724661744727300D1FF87 /* PRFlyoutToolbarTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRFlyoutToolbarTests.h; sourceTree = "<group>"; };
 		DAD724671744727300D1FF87 /* PRFlyoutToolbarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRFlyoutToolbarTests.m; sourceTree = "<group>"; };
+		DDD78FF31946412ABB209B52 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,7 @@
 				DAD7243D1744727300D1FF87 /* UIKit.framework in Frameworks */,
 				DAD7243F1744727300D1FF87 /* Foundation.framework in Frameworks */,
 				DAD724411744727300D1FF87 /* CoreGraphics.framework in Frameworks */,
+				E255821A2EC84B66BAD76959 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +99,16 @@
 		DAD724301744727300D1FF87 = {
 			isa = PBXGroup;
 			children = (
+				DADEC7D517494F3F002D155D /* Images */,
+				DA452B7E17480FA9001D7E41 /* PRHandleView.h */,
+				DA452B7F17480FA9001D7E41 /* PRHandleView.m */,
 				DA63BEDB17447CCB007C8B56 /* QuartzCore.framework */,
 				DA63BED917447C72007C8B56 /* CoreFoundation.framework */,
 				DAD724421744727300D1FF87 /* PRFlyoutToolbar */,
 				DAD724601744727300D1FF87 /* PRFlyoutToolbarTests */,
 				DAD7243B1744727300D1FF87 /* Frameworks */,
 				DAD7243A1744727300D1FF87 /* Products */,
+				DDD78FF31946412ABB209B52 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +128,7 @@
 				DAD7243E1744727300D1FF87 /* Foundation.framework */,
 				DAD724401744727300D1FF87 /* CoreGraphics.framework */,
 				DAD7245A1744727300D1FF87 /* SenTestingKit.framework */,
+				CAD087F203C541CCAF9093E0 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +180,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DADEC7D517494F3F002D155D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -175,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DAD7246B1744727300D1FF87 /* Build configuration list for PBXNativeTarget "PRFlyoutToolbar" */;
 			buildPhases = (
+				2F74D7A47322438F984847C9 /* Check Pods Manifest.lock */,
 				DAD724351744727300D1FF87 /* Sources */,
 				DAD724361744727300D1FF87 /* Frameworks */,
 				DAD724371744727300D1FF87 /* Resources */,
+				A59DF26AD0D44AF69F687D4D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -258,6 +279,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F74D7A47322438F984847C9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		A59DF26AD0D44AF69F687D4D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 		DAD724571744727300D1FF87 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +331,7 @@
 				DAD7244D1744727300D1FF87 /* PRAppDelegate.m in Sources */,
 				DA63BED5174473C0007C8B56 /* PRTestVIewControllerViewController.m in Sources */,
 				DA63BED817447730007C8B56 /* PRFlyoutToolbar.m in Sources */,
+				DA452B8017480FA9001D7E41 /* PRHandleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +431,7 @@
 		};
 		DAD7246C1744727300D1FF87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD78FF31946412ABB209B52 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PRFlyoutToolbar/PRFlyoutToolbar-Prefix.pch";
@@ -392,6 +443,7 @@
 		};
 		DAD7246D1744727300D1FF87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD78FF31946412ABB209B52 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PRFlyoutToolbar/PRFlyoutToolbar-Prefix.pch";

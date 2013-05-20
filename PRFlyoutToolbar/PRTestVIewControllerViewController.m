@@ -19,26 +19,15 @@
 
 - (void)loadView {
   self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-  self.view.backgroundColor = [UIColor redColor];
+  self.view.backgroundColor = [UIColor grayColor];
+
+  UIBarButtonItem *bb1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+  UIBarButtonItem *bb2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
+  UIBarButtonItem *bb3 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
   
-  
-  CGRect rectangle = CGRectMake(100, 100, 100, 100);
-  PRFlyoutToolbar *ft = [[PRFlyoutToolbar alloc] initWithFrame:rectangle];
+  PRFlyoutToolbar *ft = [[PRFlyoutToolbar alloc] initWithFrame:CGRectMake(20, 400, 0, 0)];
+  ft.items = [NSArray arrayWithObjects:bb1, bb2, bb3, nil];
   [self.view addSubview:ft];
-  
-  CGRect frame, remain;
-  
-  CGRectDivide(self.view.frame,
-              &frame,
-              &remain,
-              44,
-              CGRectMaxYEdge);
-  
-  self.toolBar = [[UIToolbar alloc] initWithFrame:[self toolBarFrame]];
-  UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:nil action:nil];
-  self.toolBar.items = [NSArray arrayWithObject:bbi];
-  
-  [self.view addSubview:self.toolBar];
 }
 
 - (CGRect)toolBarFrame {
@@ -67,10 +56,6 @@
   [super didReceiveMemoryWarning];
 }
 
-- (void)didChangeStatusBarFrame {
-  [UIView beginAnimations:@"frame" context:nil];
-  self.toolBar.frame =[self toolBarFrame];
-  [UIView commitAnimations];
-}
+
 
 @end

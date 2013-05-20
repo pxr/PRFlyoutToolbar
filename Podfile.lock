@@ -1,0 +1,17 @@
+PODS:
+  - CocoaLumberjack (1.6.2)
+  - PRCategoryKit (1.0.4)
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - PRCategoryKit (from `https://github.com/pxr/PRCategoryKit.git`)
+
+EXTERNAL SOURCES:
+  PRCategoryKit:
+    :git: https://github.com/pxr/PRCategoryKit.git
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: d73e1e317ced14ab930797dda6c17156ff17aaa1
+  PRCategoryKit: 667d68bd5450ef8cbe6705cc8b340bdae79c38bb
+
+COCOAPODS: 0.19.1
