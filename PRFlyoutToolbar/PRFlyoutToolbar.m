@@ -48,6 +48,7 @@
 
 - (void)sharedInit {
   TRACE
+  self.open = NO;
   [self sizeControl];
   self.clipsToBounds = YES;
   CALayer *layer = self.layer;
@@ -177,7 +178,7 @@
 
 - (void)sizeControl {
   TRACE
-  if (!self.open) {
+  if (self.open) {
     //self.frameSize = CGSizeMake(160.0, 60.0);
     [self setWidthConstraints:40+80*[self.items count]];
   } else {
